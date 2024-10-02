@@ -1,5 +1,31 @@
 """Import the Account class from the Account.py file."""
 # ADD YOUR CODE HERE
+from Account import Account
+""""
+class CDAccount(Account):
+
+    def __init__(self, in_balance_fl, in_annual_interest_fl, in_maturation_months_int):
+    #call parent class init
+        Account.__init__(self, in_balance_fl, in_annual_interest_fl)
+        self.duration_in_months = in_duration_in_months_int
+
+    #create an instance with just the account parameters
+    def __init__(self, in_balance_fl, in_annual_interest_fl):
+        Account.__init__(self, in_balance_fl, in_annual_interest_fl)
+        self.duration_in_months = in_duration_in_months_int
+
+    def set_duration_in_month(self, in_duration_in_months_int):
+        self.duration_in_months = in_duration_in_months_int
+
+    def get_duration_in_month(self):
+        return self.duration_in_months
+
+    def set_interest_earned(self, in_interest_earned_fl):
+        self.interest_earned = in_interest_earned_fl
+
+    def get_interest_earned(self):
+        return float(self.interest_earned)
+"""
 
 def create_cd_account(balance, interest_rate, months):
     """Creates a CD account, calculates interest earned, and updates the account balance.
@@ -16,18 +42,22 @@ def create_cd_account(balance, interest_rate, months):
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
     # ADD YOUR CODE HERE
-
+    cdAccount = Account(balance, 0)
     # Calculate interest earned
     # ADD YOUR CODE HERE
+    interest_earned = balance * interest_rate/100/12 * months
 
     # Update the CD account balance by adding the interest earned
     # ADD YOUR CODE HERE
+    updated_balance = balance + interest_earned
 
     # Pass the updated_balance to the set balance method using the instance of the CDAccount class.
     # ADD YOUR CODE HERE
+    cdAccount.set_balance(updated_balance)
 
     # Pass the interest_earned to the set interest method using the instance of the CDAccount class.
     # ADD YOUR CODE HERE
+    cdAccount.set_interest(interest_earned)
 
     # Return the updated balance and interest earned.
-    return  # ADD YOUR CODE HERE
+    return  updated_balance, interest_earned
