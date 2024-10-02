@@ -1,32 +1,5 @@
 """Import the Account class from the Account.py file."""
-# ADD YOUR CODE HERE
 from Account import Account
-"""
-class SavingsAccount(Account):
-
-    def __init__(self, in_balance_fl, in_annual_interest_fl, in_duration_in_months_int):
-    #call parent class init
-        Account.__init__(self, in_balance_fl, in_annual_interest_fl)
-        self.duration_in_months = in_duration_in_months_int
-
-    def set_duration_in_month(self, in_duration_in_months_int):
-        self.duration_in_months = in_duration_in_months_int
-
-    def get_duration_in_month(self):
-        return self.duration_in_months
-
-    def set_interest_earned(self, in_interest_earned_fl):
-        self.interest_earned = in_interest_earned_fl
-
-    def get_interest_earned(self):
-        return float(self.interest_earned)
-
-    def get_balance(self):
-        return self.balance
-
-    def get_interest(self):
-        return self.interest
-"""
 
 # Define a function for the Savings Account
 def create_savings_account(balance, interest_rate, months):
@@ -42,24 +15,20 @@ def create_savings_account(balance, interest_rate, months):
         And returns the interest earned.
     """
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
-    #  Hint: You need to add the interest as a value, i.e, 0.
-    # ADD YOUR CODE HERE
+
     mySA = Account(balance, 0)
     # Calculate interest earned
-     # ADD YOUR CODE HERE
-    interest_earned = balance * interest_rate/100/12 * months
+    interest_earned = balance * (interest_rate/100/12 * months)
 
     # Update the savings account balance by adding the interest earned
-    # ADD YOUR CODE HERE
     updated_balance = balance + interest_earned
 
     # Pass the updated_balance to the set balance method using the instance of the SavingsAccount class.
-    # ADD YOUR CODE HERE
     mySA.set_balance(updated_balance)
 
     # Pass the interest_earned to the set interest method using the instance of the SavingsAccount class.
-    # ADD YOUR CODE HERE
     mySA.set_interest(interest_earned)
+
     # Return the updated balance and interest earned.
     return  updated_balance, interest_earned  # ADD YOUR CODE HERE
 
